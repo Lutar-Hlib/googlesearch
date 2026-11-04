@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b12">
+  <meta name="description" content="Ukázka různých HTML formulářových prvků.">
+  <title>Formulářové prvky — Hlib Kolisnyk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="search-page form-page">
+  <header class="search-header">
+    <a class="logo" href="index.html" aria-label="Hlib Kolisnyk — portfolio">HK<span>.</span></a>
+    <nav class="search-nav" aria-label="Navigace projektu">
+      <a class="search-back-link" href="googlesearch.html">Google Search <span aria-hidden="true">↗</span></a>
+      <a class="search-back-link" href="index.html">Zpět na portfolio <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main class="form-main">
+    <p class="eyebrow">UKÁZKA HTML / FORMULÁŘOVÉ PRVKY</p>
+    <h1>Formuláře<br><span class="gradient-text">v praxi.</span></h1>
+    <p class="form-intro">Přehled různých vstupních polí, výběrů a tlačítek v HTML. Formulář slouží pouze jako ukázka.</p>
+
+    <form class="demo-form" action="#" method="get">
+      <fieldset class="form-section">
+        <legend>Osobní údaje</legend>
+        <div class="form-grid">
+          <label class="form-field">Jméno
+            <input type="text" name="jmeno" placeholder="Jan Novák" autocomplete="given-name">
+          </label>
+          <label class="form-field">Příjmení
+            <input type="text" name="prijmeni" placeholder="Novák" autocomplete="family-name">
+          </label>
+          <label class="form-field">E-mail
+            <input type="email" name="email" placeholder="jan@example.com" autocomplete="email">
+          </label>
+          <label class="form-field">Telefon
+            <input type="tel" name="telefon" placeholder="+420 123 456 789" autocomplete="tel">
+          </label>
+          <label class="form-field">Heslo
+            <input type="password" name="heslo" placeholder="Zadejte heslo" autocomplete="new-password">
+          </label>
+          <label class="form-field">Webová stránka
+            <input type="url" name="web" placeholder="https://example.com">
+          </label>
+        </div>
+      </fieldset>
+
+      <fieldset class="form-section">
+        <legend>Další vstupní typy</legend>
+        <div class="form-grid">
+          <label class="form-field">Věk
+            <input type="number" name="vek" min="0" max="120" placeholder="18">
+          </label>
+          <label class="form-field">Datum narození
+            <input type="date" name="datum">
+          </label>
+          <label class="form-field">Čas schůzky
+            <input type="time" name="cas">
+          </label>
+          <label class="form-field">Měsíc
+            <input type="month" name="mesic">
+          </label>
+          <label class="form-field">Týden
+            <input type="week" name="tyden">
+          </label>
+          <label class="form-field">Datum a čas
+            <input type="datetime-local" name="datum-cas">
+          </label>
+          <label class="form-field">Barva
+            <input type="color" name="barva" value="#6ce8ed">
+          </label>
+          <label class="form-field">Hledat
+            <input type="search" name="hledat" placeholder="Hledaný výraz">
+          </label>
+          <label class="form-field">Oblíbený prohlížeč
+            <input type="text" name="prohlizec" list="prohlizece" placeholder="Vyberte nebo napište">
+            <datalist id="prohlizece">
+              <option value="Firefox">
+              <option value="Google Chrome">
+              <option value="Microsoft Edge">
+              <option value="Safari">
+            </datalist>
+          </label>
+          <label class="form-field">Nahrát soubor
+            <input type="file" name="soubor">
+          </label>
+        </div>
+        <label class="form-field range-field">Hodnocení: <output id="rating-output">5</output>
+          <input type="range" name="hodnoceni" min="1" max="10" value="5" oninput="document.getElementById('rating-output').value = this.value">
+        </label>
+      </fieldset>
+
+      <fieldset class="form-section">
+        <legend>Výběr a preference</legend>
+        <label class="form-field">Země
+          <select name="zeme">
+            <option value="">Vyberte zemi</option>
+            <option value="cz">Česká republika</option>
+            <option value="sk">Slovensko</option>
+            <option value="pl">Polsko</option>
+          </select>
+        </label>
+        <label class="form-field">Technologie (více možností)
+          <select name="technologie" multiple size="4">
+            <option>HTML</option>
+            <option>CSS</option>
+            <option>JavaScript</option>
+            <option>React</option>
+          </select>
+        </label>
+        <div class="choice-group">
+          <span class="choice-heading">Preferovaný kontakt</span>
+          <label><input type="radio" name="kontakt" value="email"> E-mail</label>
+          <label><input type="radio" name="kontakt" value="telefon"> Telefon</label>
+          <label><input type="radio" name="kontakt" value="zprava"> Zpráva</label>
+        </div>
+        <div class="choice-group">
+          <span class="choice-heading">Co vás zajímá?</span>
+          <label><input type="checkbox" name="zajem" value="design"> Webový design</label>
+          <label><input type="checkbox" name="zajem" value="vyvoj"> Vývoj webu</label>
+          <label><input type="checkbox" name="zajem" value="konzultace"> Konzultace</label>
+          <label><input type="checkbox" name="souhlas" value="ano"> Souhlasím se zpracováním údajů</label>
+        </div>
+      </fieldset>
+
+      <fieldset class="form-section">
+        <legend>Zpráva a tlačítka</legend>
+        <label class="form-field">Vaše zpráva
+          <textarea name="zprava" rows="6" placeholder="Napište nám..."></textarea>
+        </label>
+        <label class="form-field">Předvyplněný text (pouze ke čtení)
+          <input type="text" name="readonly" value="Toto pole nelze upravit" readonly>
+        </label>
+        <label class="form-field">Zakázané pole
+          <input type="text" name="disabled" value="Toto pole je neaktivní" disabled>
+        </label>
+        <div class="form-actions">
+          <button type="submit" class="form-button form-button-primary">Odeslat</button>
+          <button type="reset" class="form-button">Vymazat</button>
+          <button type="button" class="form-button">Obyčejné tlačítko</button>
+        </div>
+      </fieldset>
+    </form>
+  </main>
+
+  <footer class="search-footer form-footer">
+    <a href="index.html">Portfolio <span aria-hidden="true">↗</span></a>
+    <div class="search-footer-links">
+      <a href="https://github.com/Lutar-Hlib/googlesearch/blob/main/citace.md" target="_blank" rel="noopener noreferrer">Citace a zdroje <span aria-hidden="true">↗</span></a>
+    </div>
+  </footer>
+  <section class="validator-tools search-validators" aria-label="Validace stránky">
+    <a class="validator-link" id="html-validator" href="https://validator.w3.org/nu/" target="_blank" rel="noopener noreferrer">Ověřit HTML <span>↗</span></a>
+    <button class="validator-link" id="css-validator" type="button" disabled>Ověřit CSS <span>↗</span></button>
+    <p class="validator-note" id="validator-note">Výsledek kontroly CSS se otevře v nové záložce.</p>
+    <form id="html-validator-form" action="https://validator.w3.org/nu/" method="post" enctype="multipart/form-data" target="_blank">
+      <textarea name="content" aria-label="HTML pro validaci" hidden></textarea>
+    </form>
+    <form id="css-validator-form" action="https://jigsaw.w3.org/css-validator/validator" method="post" enctype="multipart/form-data" target="_blank">
+      <input type="hidden" name="profile" value="css3">
+      <input type="hidden" name="warning" value="1">
+      <input type="hidden" name="lang" value="cs">
+      <textarea name="text" aria-label="CSS pro validaci" hidden></textarea>
+    </form>
+  </section>
+  <script src="validators.js"></script>
+</body>
+</html>

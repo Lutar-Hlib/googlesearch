@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#080b12">
+  <meta name="description" content="Vyhledejte informace na Googlu.">
+  <title>Google Search — Hlib Kolisnyk</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="search-page">
+  <header class="search-header">
+    <a class="logo" href="index.html" aria-label="Hlib Kolisnyk — portfolio">HK<span>.</span></a>
+    <nav class="search-nav" aria-label="Navigace projektu">
+      <a class="search-back-link" href="formular.html">Ukázka formuláře <span aria-hidden="true">↗</span></a>
+      <a class="search-back-link" href="index.html">Zpět na portfolio <span aria-hidden="true">↗</span></a>
+    </nav>
+  </header>
+
+  <main class="search-main">
+    <div class="search-brand" aria-label="Google">
+      <span class="search-brand-blue">G</span><span class="search-brand-red">o</span><span class="search-brand-yellow">o</span><span class="search-brand-blue">g</span><span class="search-brand-green">l</span><span class="search-brand-red">e</span>
+    </div>
+    <p class="search-caption">Co hledáte?</p>
+    <form class="google-search-form" action="https://www.google.com/search" method="get">
+      <label class="search-input-wrap" for="google-query">
+        <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="10.8" cy="10.8" r="6.3"></circle>
+          <path d="m15.5 15.5 4.2 4.2"></path>
+        </svg>
+        <input id="google-query" type="search" name="q" aria-label="Hledat na Googlu" autocomplete="off" required autofocus>
+      </label>
+      <div class="search-actions">
+        <button type="submit">Vyhledat Googlem</button>
+        <button type="submit" name="btnI" value="1">Zkusím štěstí</button>
+      </div>
+    </form>
+    <p class="search-note">Vyhledávání probíhá na webu Google.</p>
+  </main>
+
+  <footer class="search-footer">
+    <span>Jednoduché vyhledávání na webu</span>
+    <div class="search-footer-links">
+      <a href="https://github.com/Lutar-Hlib/googlesearch/blob/main/citace.md" target="_blank" rel="noopener noreferrer">Citace a zdroje <span aria-hidden="true">↗</span></a>
+      <a href="https://www.google.com/" target="_blank" rel="noopener noreferrer">Přejít na Google <span aria-hidden="true">↗</span></a>
+    </div>
+  </footer>
+  <section class="validator-tools search-validators" aria-label="Validace stránky">
+    <a class="validator-link" id="html-validator" href="https://validator.w3.org/nu/" target="_blank" rel="noopener noreferrer">Ověřit HTML <span>↗</span></a>
+    <button class="validator-link" id="css-validator" type="button" disabled>Ověřit CSS <span>↗</span></button>
+    <p class="validator-note" id="validator-note">Výsledek kontroly CSS se otevře v nové záložce.</p>
+    <form id="html-validator-form" action="https://validator.w3.org/nu/" method="post" enctype="multipart/form-data" target="_blank">
+      <textarea name="content" aria-label="HTML pro validaci" hidden></textarea>
+    </form>
+    <form id="css-validator-form" action="https://jigsaw.w3.org/css-validator/validator" method="post" enctype="multipart/form-data" target="_blank">
+      <input type="hidden" name="profile" value="css3">
+      <input type="hidden" name="warning" value="1">
+      <input type="hidden" name="lang" value="cs">
+      <textarea name="text" aria-label="CSS pro validaci" hidden></textarea>
+    </form>
+  </section>
+  <script src="validators.js"></script>
+</body>
+</html>
