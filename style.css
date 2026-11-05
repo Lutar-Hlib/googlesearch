@@ -995,10 +995,6 @@ h2 {
   width: 19px;
   height: 19px;
   flex: none;
-  fill: none;
-  stroke: #8991a2;
-  stroke-linecap: round;
-  stroke-width: 1.8;
 }
 
 .search-input-wrap input {
@@ -1010,10 +1006,6 @@ h2 {
   color: #f2f4f8;
   font: inherit;
   font-size: 15px;
-}
-
-.search-input-wrap input::-webkit-search-cancel-button {
-  cursor: pointer;
 }
 
 .search-actions {
@@ -1173,6 +1165,15 @@ h2 {
 
 .range-field {
   max-width: 420px;
+}
+
+.range-label {
+  display: flex;
+  gap: 4px;
+}
+
+.range-label label {
+  cursor: pointer;
 }
 
 .range-field output {

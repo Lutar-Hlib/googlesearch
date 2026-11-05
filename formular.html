@@ -90,9 +90,10 @@
             <input type="file" name="soubor">
           </label>
         </div>
-        <label class="form-field range-field">Hodnocení: <output id="rating-output">5</output>
-          <input type="range" name="hodnoceni" min="1" max="10" value="5" oninput="document.getElementById('rating-output').value = this.value">
-        </label>
+        <div class="form-field range-field">
+          <div class="range-label"><label for="rating">Hodnocení</label>: <output id="rating-output" for="rating">5</output></div>
+          <input id="rating" type="range" name="hodnoceni" min="1" max="10" value="5" oninput="document.getElementById('rating-output').value = this.value">
+        </div>
       </fieldset>
 
       <fieldset class="form-section">
